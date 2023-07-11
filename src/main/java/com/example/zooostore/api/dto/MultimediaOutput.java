@@ -1,4 +1,4 @@
-package com.example.zooostore.dto;
+package com.example.zooostore.api.dto;
 
 import java.util.UUID;
 

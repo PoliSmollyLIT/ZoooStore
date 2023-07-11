@@ -1,12 +1,17 @@
-package com.example.zooostore.models;
+package com.example.zooostore.data.models;
 
 import jakarta.persistence.*;
-import lombok.Getter;
+import lombok.*;
 
 import java.util.UUID;
 
 @Entity
 @Table(name = "multimedia")
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Multimedia {
 
     @Id
@@ -17,4 +22,7 @@ public class Multimedia {
     @Column(name = "url")
     @Getter
     private String url;
+
+    @ManyToOne
+    private Item item;
 }

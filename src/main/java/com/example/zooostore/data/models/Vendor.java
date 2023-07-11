@@ -1,10 +1,7 @@
-package com.example.zooostore.models;
+package com.example.zooostore.data.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Set;
 import java.util.UUID;
@@ -13,6 +10,7 @@ import java.util.UUID;
 @Table(name = "vendors")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Vendor
@@ -25,6 +23,6 @@ public class Vendor
 
     private String phone;
 
-    @OneToMany
+    @OneToMany(mappedBy = "vendor")
     private Set<Item> items;
 }

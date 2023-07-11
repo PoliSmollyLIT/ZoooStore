@@ -1,10 +1,7 @@
-package com.example.zooostore.models;
+package com.example.zooostore.data.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Set;
 
@@ -12,8 +9,9 @@ import java.util.Set;
 @Table(name = "tags")
 @Getter
 @Setter
-@AllArgsConstructor
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class Tag {
     @Id
     @Column(name = "id")
@@ -23,6 +21,6 @@ public class Tag {
     @Column(name = "title")
     private String title;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "tags")
     private Set<Item> items;
 }

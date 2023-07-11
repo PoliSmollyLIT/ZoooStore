@@ -1,8 +1,7 @@
-package com.example.zooostore.models;
+package com.example.zooostore.data.models;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Set;
 import java.util.UUID;
@@ -11,6 +10,9 @@ import java.util.UUID;
 @Table(name = "items")
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -23,16 +25,13 @@ public class Item {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "vendor")
     @ManyToOne
-    @JoinColumn(referencedColumnName = "items", nullable = false)
+   // @JoinColumn(referencedColumnName = "items", nullable = false)
     private Vendor vendor;
 
-    @Column(name = "multimedia")
-    @OneToMany
+    @OneToMany(mappedBy = "item")
     private Set<Multimedia> multimedia;
 
-    @Column(name = "tag")
     @ManyToMany
     private Set<Tag> tags;
 

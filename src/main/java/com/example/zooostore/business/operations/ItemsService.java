@@ -1,7 +1,7 @@
-package com.example.zooostore.services;
+package com.example.zooostore.business.operations;
 
-import com.example.zooostore.dto.ItemInput;
-import com.example.zooostore.dto.ItemOutput;
+import com.example.zooostore.api.dto.ItemInput;
+import com.example.zooostore.api.dto.ItemOutput;
 
 import java.util.UUID;
 

@@ -1,6 +1,6 @@
-package com.example.zooostore.dto;
+package com.example.zooostore.api.dto;
 
-import com.example.zooostore.models.Item;
+import com.example.zooostore.data.models.Item;
 
 import java.util.Set;
 

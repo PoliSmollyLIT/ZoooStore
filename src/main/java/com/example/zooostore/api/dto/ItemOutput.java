@@ -1,4 +1,4 @@
-package com.example.zooostore.dto;
+package com.example.zooostore.api.dto;
 
 
 import lombok.AccessLevel;
@@ -10,7 +10,8 @@ import java.util.UUID;
 
 @Getter
 @Setter(AccessLevel.PRIVATE)
-public class ItemInput {
+public class ItemOutput {
+    private UUID id;
     private String title;
     private String description;
     private VendorInput vendor;
