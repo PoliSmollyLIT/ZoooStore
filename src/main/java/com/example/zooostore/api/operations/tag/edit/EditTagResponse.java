@@ -8,4 +8,6 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class EditTagResponse {
+    private Long id;
+    private String title;
 }

@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
 
-public interface MultimediaRepo extends JpaRepository<Multimedia, UUID> {
+public interface MultimediaRepository extends JpaRepository<Multimedia, UUID> {
 }

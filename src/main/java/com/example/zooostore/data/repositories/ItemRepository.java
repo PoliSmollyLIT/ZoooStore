@@ -5,5 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
 
-public interface ItemRepo extends JpaRepository<Item, UUID> {
+public interface ItemRepository extends JpaRepository<Item, UUID> {
+    Item findItemById(UUID id);
 }

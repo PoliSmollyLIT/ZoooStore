@@ -1,31 +1,24 @@
 package com.example.zooostore.business.operations.item;
 
 import com.example.zooostore.api.operations.item.archive.ArchiveItemOperation;
+import com.example.zooostore.api.operations.item.archive.ArchiveItemRequest;
 import com.example.zooostore.api.operations.item.archive.ArchiveItemResponse;
-import com.example.zooostore.api.operations.item.create.CreateItemResponse;
 import com.example.zooostore.data.models.Item;
-import com.example.zooostore.data.repositories.ItemRepo;
+import com.example.zooostore.data.repositories.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
 public class ArchiveItemImpl implements ArchiveItemOperation {
-    private final ItemRepo itemRepo;
+    private final ItemRepository itemRepository;
     @Override
-    public ArchiveItemResponse archiveItem(UUID id) {
-        Item item = Item.builder()
-                .id(id)
-                .archived(true)
-                .build();
-        itemRepo.save(item);
+    public ArchiveItemResponse archiveItem(ArchiveItemRequest archiveItemRequest) {
+        Item item = itemRepository.findItemById(archiveItemRequest.getId());
+        item.setArchived(true);
+        itemRepository.save(item);
         ArchiveItemResponse response = ArchiveItemResponse.builder()
                 .id(item.getId())
-                .description(item.getDescription())
-                .title(item.getTitle())
-                .archive(item.isArchived())
                 .build();
         return response;
     }

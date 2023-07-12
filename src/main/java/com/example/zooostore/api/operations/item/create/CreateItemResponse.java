@@ -13,8 +13,8 @@ public class CreateItemResponse {
         private UUID id;
         private String title;
         private String description;
-        private CreateItemVendorOutput vendor;
-        private Set<CreateItemMultimediaOutput> multimedia;
-        private Set<UUID> tags;
+        private UUID vendor;
+        private Set<UUID> multimedia;
+        private Set<Long> tags;
         private boolean archive;
 }

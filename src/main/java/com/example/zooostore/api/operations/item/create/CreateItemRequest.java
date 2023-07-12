@@ -1,6 +1,5 @@
 package com.example.zooostore.api.operations.item.create;
 
-import com.example.zooostore.api.dto.*;
 import lombok.*;
 
 import java.util.Set;
@@ -15,6 +14,6 @@ public class CreateItemRequest {
         private String title;
         private String description;
         private UUID vendor;
-        private Set<UUID> tags;
+        private Set<Long> tags;
         private boolean archive;
 }

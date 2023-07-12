@@ -8,4 +8,6 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class EditVendorRequest {
+    private String name;
+    private String phone;
 }
