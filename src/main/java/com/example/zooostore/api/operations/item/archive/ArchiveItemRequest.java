@@ -1,5 +1,6 @@
 package com.example.zooostore.api.operations.item.archive;
 
+import com.example.zooostore.api.operations.base.OperationInput;
 import lombok.*;
 
 import java.util.UUID;
@@ -9,6 +10,6 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ArchiveItemRequest {
+public class ArchiveItemRequest implements OperationInput {
     private UUID id;
 }

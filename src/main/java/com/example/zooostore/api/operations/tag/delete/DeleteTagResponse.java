@@ -1,5 +1,6 @@
 package com.example.zooostore.api.operations.tag.delete;
 
+import com.example.zooostore.api.operations.base.OperationResult;
 import lombok.*;
 
 import java.util.UUID;
@@ -9,6 +10,6 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class DeleteTagResponse {
+public class DeleteTagResponse implements OperationResult {
     private Long id;
 }

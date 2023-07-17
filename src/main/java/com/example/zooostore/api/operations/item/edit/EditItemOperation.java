@@ -1,5 +1,7 @@
 package com.example.zooostore.api.operations.item.edit;
 
-public interface EditItemOperation {
-    EditItemResponse editItem(EditItemRequest item);
+import com.example.zooostore.api.operations.base.OperationProcessor;
+
+public interface EditItemOperation extends OperationProcessor<EditItemResponse, EditItemRequest> {
+    EditItemResponse process(EditItemRequest item);
 }

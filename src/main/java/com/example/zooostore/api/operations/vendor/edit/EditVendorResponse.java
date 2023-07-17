@@ -1,5 +1,6 @@
 package com.example.zooostore.api.operations.vendor.edit;
 
+import com.example.zooostore.api.operations.base.OperationResult;
 import lombok.*;
 
 import java.util.UUID;
@@ -9,7 +10,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class EditVendorResponse {
+public class EditVendorResponse implements OperationResult {
     private UUID id;
     private String name;
     private String phone;

@@ -1,5 +1,7 @@
 package com.example.zooostore.api.operations.item.archive;
 
-public interface ArchiveItemOperation {
-    ArchiveItemResponse archiveItem(ArchiveItemRequest id);
+import com.example.zooostore.api.operations.base.OperationProcessor;
+
+public interface ArchiveItemOperation extends OperationProcessor<ArchiveItemResponse, ArchiveItemRequest> {
+    ArchiveItemResponse process(ArchiveItemRequest id);
 }

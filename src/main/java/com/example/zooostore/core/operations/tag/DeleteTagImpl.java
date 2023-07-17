@@ -1,0 +1,26 @@
+package com.example.zooostore.core.operations.tag;
+
+import com.example.zooostore.api.operations.tag.delete.DeleteTagOperation;
+import com.example.zooostore.api.operations.tag.delete.DeleteTagRequest;
+import com.example.zooostore.api.operations.tag.delete.DeleteTagResponse;
+import com.example.zooostore.persistance.models.Tag;
+import com.example.zooostore.persistance.repositories.TagRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+
+@Service
+@RequiredArgsConstructor
+public class DeleteTagImpl implements DeleteTagOperation {
+    private final TagRepository tagRepository;
+    @Override
+    public DeleteTagResponse process(DeleteTagRequest deleteTagRequest) {
+        Tag tagEntity = tagRepository.findTagById(deleteTagRequest.getId());
+            tagRepository.delete(tagEntity);
+            DeleteTagResponse deleteTagResponse = DeleteTagResponse.builder()
+                    .id(tagEntity.getId())
+                    .build();
+            return deleteTagResponse;
+
+    }
+}

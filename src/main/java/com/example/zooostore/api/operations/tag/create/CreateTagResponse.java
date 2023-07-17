@@ -1,5 +1,6 @@
 package com.example.zooostore.api.operations.tag.create;
 
+import com.example.zooostore.api.operations.base.OperationResult;
 import lombok.*;
 
 @Getter
@@ -7,7 +8,7 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateTagResponse {
+public class CreateTagResponse implements OperationResult {
     private Long id;
     private String title;
 }

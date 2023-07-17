@@ -1,5 +1,8 @@
 package com.example.zooostore.api.operations.multimedia.create;
 
-public interface CreateMultimediaOperation {
-    CreateMultimediaResponse createMultimedia(CreateMultimediaRequest multimedia);
+import com.example.zooostore.api.operations.base.OperationProcessor;
+import com.example.zooostore.api.operations.item.create.CreateItemResponse;
+
+public interface CreateMultimediaOperation extends OperationProcessor<CreateMultimediaResponse, CreateMultimediaRequest> {
+    CreateMultimediaResponse process(CreateMultimediaRequest multimedia);
 }

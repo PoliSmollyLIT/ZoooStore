@@ -1,5 +1,6 @@
 package com.example.zooostore.api.operations.tag.create;
 
+import com.example.zooostore.api.operations.base.OperationInput;
 import lombok.*;
 
 @Getter
@@ -7,6 +8,6 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateTagRequest {
+public class CreateTagRequest implements OperationInput {
     private String title;
 }

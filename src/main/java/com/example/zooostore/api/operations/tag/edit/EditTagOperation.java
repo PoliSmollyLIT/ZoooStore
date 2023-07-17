@@ -1,5 +1,7 @@
 package com.example.zooostore.api.operations.tag.edit;
 
-public interface EditTagOperation {
-    EditTagResponse editTag(EditTagRequest tag);
+import com.example.zooostore.api.operations.base.OperationProcessor;
+
+public interface EditTagOperation extends OperationProcessor<EditTagResponse, EditTagRequest> {
+    EditTagResponse process(EditTagRequest tag);
 }
