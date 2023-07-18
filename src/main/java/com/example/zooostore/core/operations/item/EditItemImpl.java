@@ -7,6 +7,7 @@ import com.example.zooostore.persistance.models.Tag;
 import com.example.zooostore.persistance.models.Vendor;
 import com.example.zooostore.persistance.repositories.ItemRepository;
 import com.example.zooostore.persistance.repositories.VendorRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -20,8 +21,8 @@ public class EditItemImpl implements EditItemOperation {
     private final VendorRepository vendorRepository;
     @Override
     public EditItemResponse process(EditItemRequest itemInput) {
-        Vendor vendor = vendorRepository.findVendorById(itemInput.getVendor());
-        Item item = itemRepository.findItemById(itemInput.getId());
+        Vendor vendor = vendorRepository.findVendorById(itemInput.getVendor()).orElseThrow(()-> new EntityNotFoundException("Vendor with this id does not exist"));
+        Item item = itemRepository.findItemById(itemInput.getId()).orElseThrow(()-> new EntityNotFoundException("Item with this id does not exist"));
         item.setTitle(itemInput.getTitle());
         item.setDescription(itemInput.getDescription());
         item.setVendor(vendor);

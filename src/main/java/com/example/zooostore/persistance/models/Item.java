@@ -22,15 +22,12 @@ public class Item {
     private UUID id;
 
     @Column(name = "title")
-    @NotBlank
     private String title;
 
     @Column(name = "description")
-    @NotBlank
     private String description;
 
     @ManyToOne
-    @NotNull
    // @JoinColumn(referencedColumnName = "items", nullable = false)
     private Vendor vendor;
 

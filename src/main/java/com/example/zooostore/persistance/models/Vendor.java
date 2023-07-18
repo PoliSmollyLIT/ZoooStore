@@ -20,10 +20,8 @@ public class Vendor
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @NotBlank
     private String name;
 
-    @NotBlank
     private String phone;
 
     @OneToMany(mappedBy = "vendor")

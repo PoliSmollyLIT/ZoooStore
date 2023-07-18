@@ -4,6 +4,7 @@ import com.example.zooostore.api.operations.multimedia.create.CreateMultimediaRe
 import com.example.zooostore.core.operations.multimedia.CreateMultimediaImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +21,8 @@ public class MultimediaController {
 
     @PostMapping("/create")
     @Operation(summary = "Craete Multimedia", description = "Creates a new Multimedia")
-    ResponseEntity createMultimedia(@RequestBody CreateMultimediaRequest multimediaToCreate){
+
+    ResponseEntity createMultimedia(@Valid @RequestBody CreateMultimediaRequest multimediaToCreate){
         return ResponseEntity.ok(createMultimedia.process(multimediaToCreate));
     }
 }

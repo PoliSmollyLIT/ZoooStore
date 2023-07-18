@@ -20,7 +20,6 @@ public class Tag {
     private Long id;
 
     @Column(name = "title")
-    @NotBlank
     private String title;
 
     @ManyToMany(mappedBy = "tags")

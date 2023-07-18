@@ -5,6 +5,7 @@ import com.example.zooostore.api.operations.tag.delete.DeleteTagRequest;
 import com.example.zooostore.api.operations.tag.delete.DeleteTagResponse;
 import com.example.zooostore.persistance.models.Tag;
 import com.example.zooostore.persistance.repositories.TagRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,7 @@ public class DeleteTagImpl implements DeleteTagOperation {
     private final TagRepository tagRepository;
     @Override
     public DeleteTagResponse process(DeleteTagRequest deleteTagRequest) {
-        Tag tagEntity = tagRepository.findTagById(deleteTagRequest.getId());
+        Tag tagEntity = tagRepository.findTagById(deleteTagRequest.getId()).orElseThrow(()-> new EntityNotFoundException("Tag with this id does not exist"));
             tagRepository.delete(tagEntity);
             DeleteTagResponse deleteTagResponse = DeleteTagResponse.builder()
                     .id(tagEntity.getId())

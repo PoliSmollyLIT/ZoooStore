@@ -1,5 +1,6 @@
 package com.example.zooostore.api.operations.item.get;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 import java.util.UUID;
@@ -10,7 +11,10 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 public class EditItemVendorOutput {
+    @NotBlank
     private UUID id;
+    @NotBlank
     private String name;
+    @NotBlank
     private String phone;
 }

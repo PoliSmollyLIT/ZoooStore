@@ -10,8 +10,11 @@ import com.example.zooostore.core.operations.item.EditItemImpl;
 import com.example.zooostore.core.operations.item.GetItemImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Min;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -20,6 +23,7 @@ import java.util.UUID;
 @RequestMapping("/zoostore/item")
 @Tag(name = "Zoostsore", description = "API for working with items")
 @RequiredArgsConstructor
+@Validated
 public class ItemController {
     private final ArchiveItemImpl archiveItem;
     private final CreateItemImpl createItem;
@@ -28,20 +32,20 @@ public class ItemController {
 
     @PostMapping("/create")
     @Operation(summary = "Create Item", description = "Creates a new Item")
-    ResponseEntity createItem(@RequestBody CreateItemRequest itemToCreate){
+    ResponseEntity createItem(@Valid @RequestBody CreateItemRequest itemToCreate){
         return ResponseEntity.ok(createItem.process(itemToCreate));
     }
 
     @PostMapping("/edit")
     @Operation(summary = "Edit Item", description = "Edits existing Item")
-    ResponseEntity editItem(@RequestBody EditItemRequest itemToEdit)
+    ResponseEntity editItem(@Valid @RequestBody EditItemRequest itemToEdit)
     {
         return ResponseEntity.ok(editItem.process(itemToEdit));
     }
 
     @PostMapping("/archive/{uuid}")
     @Operation(summary = "Archive Item", description = "Archives existing Item")
-    ResponseEntity archiveItem(@RequestParam UUID itemToArchive){
+    ResponseEntity archiveItem( @RequestParam UUID itemToArchive){
         ArchiveItemRequest itemRequest = ArchiveItemRequest.builder()
                 .id(itemToArchive)
                 .build();

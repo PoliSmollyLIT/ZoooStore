@@ -8,6 +8,7 @@ import com.example.zooostore.core.operations.tag.DeleteTagImpl;
 import com.example.zooostore.core.operations.tag.EditTagImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,19 +27,19 @@ public class TagController {
 
     @PostMapping("/create")
     @Operation(summary = "Create Tag", description = "Creates a new Tag")
-    ResponseEntity createTag(@RequestBody CreateTagRequest tagToCreate){
+    ResponseEntity createTag(@Valid @RequestBody CreateTagRequest tagToCreate){
         return ResponseEntity.ok(createTag.process(tagToCreate));
     }
 
     @PostMapping("/edit")
     @Operation(summary = "Edit Tag", description = "Edits existing Tag")
-    ResponseEntity editTag(@RequestBody EditTagRequest tagToEdit) {
+    ResponseEntity editTag(  @Valid @RequestBody EditTagRequest tagToEdit) {
         return ResponseEntity.ok(editTag.process(tagToEdit));
     }
 
     @PostMapping("/delete")
     @Operation(summary = "Delete Tag", description = "Deletes an existing Tag")
-    ResponseEntity deleteTag(@RequestBody DeleteTagRequest tagToDelete){
+    ResponseEntity deleteTag( @Valid @RequestBody DeleteTagRequest tagToDelete){
         return ResponseEntity.ok(deleteTag.process(tagToDelete));
     }
 

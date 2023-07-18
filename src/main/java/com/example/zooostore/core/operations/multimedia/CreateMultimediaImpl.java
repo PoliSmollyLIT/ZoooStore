@@ -7,6 +7,7 @@ import com.example.zooostore.persistance.models.Item;
 import com.example.zooostore.persistance.models.Multimedia;
 import com.example.zooostore.persistance.repositories.ItemRepository;
 import com.example.zooostore.persistance.repositories.MultimediaRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +18,7 @@ public class CreateMultimediaImpl implements CreateMultimediaOperation {
     private final ItemRepository itemRepository;
     @Override
     public CreateMultimediaResponse process(CreateMultimediaRequest multimedia) {
-        Item item = itemRepository.findItemById(multimedia.getItem());
+        Item item = itemRepository.findItemById(multimedia.getItem()).orElseThrow(()-> new EntityNotFoundException("Item with this id does not exist"));
         Multimedia multimediaEntity = Multimedia.builder()
                 .url(multimedia.getUrl())
                 .item(item)

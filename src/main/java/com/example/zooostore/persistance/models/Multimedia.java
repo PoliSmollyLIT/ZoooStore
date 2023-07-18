@@ -21,7 +21,6 @@ public class Multimedia {
     private UUID id;
 
     @Column(name = "url")
-    @NotBlank
     private String url;
 
     @ManyToOne

@@ -9,6 +9,7 @@ import com.example.zooostore.persistance.models.Vendor;
 import com.example.zooostore.persistance.repositories.ItemRepository;
 import com.example.zooostore.persistance.repositories.TagRepository;
 import com.example.zooostore.persistance.repositories.VendorRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +25,7 @@ public class CreateItemImpl implements CreateItemOperation {
 
     @Override
     public CreateItemResponse process(CreateItemRequest itemInput) {
-        Vendor vendor = vendorRepository.findVendorById(itemInput.getVendor());
+        Vendor vendor = vendorRepository.findVendorById(itemInput.getVendor()).orElseThrow(()-> new EntityNotFoundException("Vendor with this id does not exist"));
         Set<Tag> tags = tagRepository.findTagByIdIn(itemInput.getTags());
         Item item = Item.builder()
                 .title(itemInput.getTitle())
