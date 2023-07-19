@@ -1,28 +1,28 @@
 package com.example.zooostore.persistance.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
-@Table(name = "multimedia")
+@Table(name = "vendors")
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Multimedia {
-
+public class Vendor
+{
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "id")
     private UUID id;
 
-    @Column(name = "url")
-    private String url;
+    private String name;
 
-    @ManyToOne
-    private Item item;
+    private String phone;
+
+    @OneToMany(mappedBy = "vendor")
+    private Set<Item> items;
 }

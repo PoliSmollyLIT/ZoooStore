@@ -1,8 +1,6 @@
 package com.example.zooostore.persistance.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.util.Set;
@@ -37,6 +35,5 @@ public class Item {
     @ManyToMany
     private Set<Tag> tags;
 
-    @NotBlank
     private boolean archived;
 }

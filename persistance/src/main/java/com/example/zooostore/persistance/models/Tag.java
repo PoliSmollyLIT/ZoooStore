@@ -1,7 +1,6 @@
 package com.example.zooostore.persistance.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 import java.util.Set;

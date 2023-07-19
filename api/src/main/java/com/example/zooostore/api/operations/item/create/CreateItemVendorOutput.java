@@ -1,6 +1,5 @@
 package com.example.zooostore.api.operations.item.create;
 
-import com.example.zooostore.persistance.models.Item;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
@@ -19,5 +18,5 @@ public class CreateItemVendorOutput {
     private String name;
     @NotBlank
     private String phone;
-    private Set<Item> items;
+
 }
