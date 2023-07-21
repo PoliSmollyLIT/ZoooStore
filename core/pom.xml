@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.example</groupId>
+        <groupId>com.tinquinstore</groupId>
         <artifactId>ZoooStore</artifactId>
         <version>${revision}</version>
     </parent>
 
-    <groupId>com.example.zooostore</groupId>
+    <groupId>com.tinquinstore.zooostore</groupId>
     <artifactId>core</artifactId>
     <version>${revision}</version>
 
@@ -30,14 +30,14 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.example.zooostore</groupId>
+            <groupId>com.tinquinstore.zooostore</groupId>
             <artifactId>persistance</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${revision}</version>
         </dependency>
         <dependency>
-            <groupId>com.example.zooostore</groupId>
+            <groupId>com.tinquinstore.zooostore</groupId>
             <artifactId>api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${revision}</version>
 
         </dependency>
     </dependencies>

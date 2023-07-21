@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>com.tinquinstore.zooostore</groupId>
-    <artifactId>api</artifactId>
+    <artifactId>restexport</artifactId>
     <version>${revision}</version>
 
     <properties>
@@ -18,21 +18,24 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>4.0.3</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>com.tinquinstore.zooostore</groupId>
+            <artifactId>api</artifactId>
+            <version>${revision}</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>jakarta.validation</groupId>
-            <artifactId>jakarta.validation-api</artifactId>
-            <version>3.0.2</version>
+            <groupId>com.tinquinstore.zooostore</groupId>
+            <artifactId>api</artifactId>
+            <version>${revision}</version>
+            <scope>compile</scope>
         </dependency>
-
     </dependencies>
-
 </project>
