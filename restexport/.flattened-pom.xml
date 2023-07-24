@@ -13,15 +13,15 @@
   </licenses>
   <dependencies>
     <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-openfeign</artifactId>
-      <version>4.0.3</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
       <groupId>com.tinquinstore.zooostore</groupId>
       <artifactId>api</artifactId>
       <version>0.0.3-SNAPSHOT</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-openfeign</artifactId>
+      <version>4.0.3</version>
       <scope>compile</scope>
     </dependency>
     <dependency>

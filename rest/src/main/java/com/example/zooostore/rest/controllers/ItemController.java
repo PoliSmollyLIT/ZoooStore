@@ -30,20 +30,20 @@ public class ItemController {
     private final EditItemImpl editItem;
     private final GetItemImpl getItem;
 
-    @PostMapping("/create")
+    @PostMapping()
     @Operation(summary = "Create Item", description = "Creates a new Item")
     ResponseEntity createItem(@Valid @RequestBody CreateItemRequest itemToCreate){
         return ResponseEntity.ok(createItem.process(itemToCreate));
     }
 
-    @PostMapping("/edit")
+    @PutMapping()
     @Operation(summary = "Edit Item", description = "Edits existing Item")
     ResponseEntity editItem(@Valid @RequestBody EditItemRequest itemToEdit)
     {
         return ResponseEntity.ok(editItem.process(itemToEdit));
     }
 
-    @PostMapping("/archive/{uuid}")
+    @PutMapping("/{uuid}")
     @Operation(summary = "Archive Item", description = "Archives existing Item")
     ResponseEntity archiveItem( @RequestParam UUID itemToArchive){
         ArchiveItemRequest itemRequest = ArchiveItemRequest.builder()
@@ -52,12 +52,13 @@ public class ItemController {
          return ResponseEntity.ok(archiveItem.process(itemRequest));
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/{id}")
     @Operation
-    ResponseEntity getItem(@RequestParam UUID id){
+    ResponseEntity getItem(@PathVariable UUID id){
         GetItemRequest getItemRequest = GetItemRequest.builder()
                 .id(id)
                 .build();
         return ResponseEntity.ok(getItem.process(getItemRequest));
     }
+
 }

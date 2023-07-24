@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.UUID;
 
-@Headers({"Content-Type: application/json"})
+@Headers({"Accept: application/json", "Content-Type: application/json"})
 public interface ZooStoreRestClient {
-    @RequestLine("GET /getItem/{itemRequest}")
-    GetItemResponse getItemById(@PathVariable UUID itemRequest);
+    @RequestLine("GET /zoostore/item/{id}")
+    GetItemResponse getItemById(@Param String id);
 }

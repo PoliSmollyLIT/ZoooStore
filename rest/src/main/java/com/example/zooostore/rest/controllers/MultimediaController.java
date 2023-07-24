@@ -19,9 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class MultimediaController {
     private final CreateMultimediaImpl createMultimedia;
 
-    @PostMapping("/create")
+    @PostMapping()
     @Operation(summary = "Craete Multimedia", description = "Creates a new Multimedia")
-
     ResponseEntity createMultimedia(@Valid @RequestBody CreateMultimediaRequest multimediaToCreate){
         return ResponseEntity.ok(createMultimedia.process(multimediaToCreate));
     }

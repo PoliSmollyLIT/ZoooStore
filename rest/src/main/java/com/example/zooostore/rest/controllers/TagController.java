@@ -11,10 +11,9 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/zoostore/tag")
@@ -25,22 +24,25 @@ public class TagController {
     private final DeleteTagImpl deleteTag;
     private final EditTagImpl editTag;
 
-    @PostMapping("/create")
+    @PostMapping()
     @Operation(summary = "Create Tag", description = "Creates a new Tag")
     ResponseEntity createTag(@Valid @RequestBody CreateTagRequest tagToCreate){
         return ResponseEntity.ok(createTag.process(tagToCreate));
     }
 
-    @PostMapping("/edit")
+    @PutMapping()
     @Operation(summary = "Edit Tag", description = "Edits existing Tag")
     ResponseEntity editTag(  @Valid @RequestBody EditTagRequest tagToEdit) {
         return ResponseEntity.ok(editTag.process(tagToEdit));
     }
 
-    @PostMapping("/delete")
+    @DeleteMapping("/{id}")
     @Operation(summary = "Delete Tag", description = "Deletes an existing Tag")
-    ResponseEntity deleteTag( @Valid @RequestBody DeleteTagRequest tagToDelete){
-        return ResponseEntity.ok(deleteTag.process(tagToDelete));
+    ResponseEntity deleteTag( @Valid @RequestBody Long id){
+        DeleteTagRequest deleteTagRequest = DeleteTagRequest.builder()
+                .id(id)
+                .build();
+        return ResponseEntity.ok(deleteTag.process(deleteTagRequest));
     }
 
 }

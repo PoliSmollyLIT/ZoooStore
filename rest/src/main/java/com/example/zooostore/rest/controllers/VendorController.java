@@ -19,13 +19,13 @@ public class VendorController {
     private final CreateVendorImpl createVendor;
     private final EditVendorImpl editVendor;
 
-    @PostMapping("/create")
+    @PostMapping()
     @Operation(summary = "Create Vendor", description = "Creates a new Vendor")
     ResponseEntity createVendor( @Valid @RequestBody CreateVendorRequest vendorToCreate){
         return ResponseEntity.ok(createVendor.process(vendorToCreate));
     }
 
-    @PostMapping("/edit")
+    @PutMapping()
     @Operation(summary = "Edit Vendor", description = "Edits existing Vendor")
     ResponseEntity editVendor( @Valid @RequestBody EditVendorRequest vendorToEdit)    {
         return ResponseEntity.ok(editVendor.process(vendorToEdit));
