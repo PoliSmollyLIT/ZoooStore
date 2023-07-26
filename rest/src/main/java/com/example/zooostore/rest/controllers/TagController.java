@@ -38,7 +38,7 @@ public class TagController {
 
     @DeleteMapping("/{id}")
     @Operation(summary = "Delete Tag", description = "Deletes an existing Tag")
-    ResponseEntity deleteTag( @Valid @RequestBody Long id){
+    ResponseEntity deleteTag( @Valid @PathVariable Long id){
         DeleteTagRequest deleteTagRequest = DeleteTagRequest.builder()
                 .id(id)
                 .build();
