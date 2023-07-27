@@ -10,4 +10,7 @@ import java.util.Set;
 public interface TagRepository extends JpaRepository<Tag, Long> {
     Optional<Tag> findTagById(Long id);
     Set<Tag> findTagByIdIn(Set<Long> ids);
+//    Set<Tag> findAllByTitle(String title);
+
+    Optional<Tag> findByTitle(String title);
 }

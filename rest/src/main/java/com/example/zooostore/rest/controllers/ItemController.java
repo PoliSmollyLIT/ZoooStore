@@ -4,10 +4,9 @@ import com.example.zooostore.api.operations.item.archive.ArchiveItemRequest;
 import com.example.zooostore.api.operations.item.create.CreateItemRequest;
 import com.example.zooostore.api.operations.item.edit.EditItemRequest;
 import com.example.zooostore.api.operations.item.get.GetItemRequest;
-import com.example.zooostore.core.operations.item.ArchiveItemImpl;
-import com.example.zooostore.core.operations.item.CreateItemImpl;
-import com.example.zooostore.core.operations.item.EditItemImpl;
-import com.example.zooostore.core.operations.item.GetItemImpl;
+import com.example.zooostore.api.operations.item.getall.GetAllItemsRequest;
+import com.example.zooostore.api.operations.item.getall.GetAllItemsResponse;
+import com.example.zooostore.core.operations.item.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -29,6 +28,7 @@ public class ItemController {
     private final CreateItemImpl createItem;
     private final EditItemImpl editItem;
     private final GetItemImpl getItem;
+    private final GetAllItemsImpl getAllItems;
 
     @PostMapping()
     @Operation(summary = "Create Item", description = "Creates a new Item")
@@ -59,6 +59,14 @@ public class ItemController {
                 .id(id)
                 .build();
         return ResponseEntity.ok(getItem.process(getItemRequest));
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity getItemsByTag(@RequestParam String input){
+        GetAllItemsRequest request = GetAllItemsRequest.builder()
+                .tagTitle(input)
+                .build();
+        return ResponseEntity.ok(getAllItems.process(request));
     }
 
 }

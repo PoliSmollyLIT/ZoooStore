@@ -7,6 +7,8 @@ import com.example.zooostore.api.operations.item.edit.EditItemRequest;
 import com.example.zooostore.api.operations.item.edit.EditItemResponse;
 import com.example.zooostore.api.operations.item.get.GetItemRequest;
 import com.example.zooostore.api.operations.item.get.GetItemResponse;
+import com.example.zooostore.api.operations.item.getall.GetAllItemsRequest;
+import com.example.zooostore.api.operations.item.getall.GetAllItemsResponse;
 import com.example.zooostore.api.operations.multimedia.create.CreateMultimediaRequest;
 import com.example.zooostore.api.operations.multimedia.create.CreateMultimediaResponse;
 import com.example.zooostore.api.operations.tag.create.CreateTagRequest;
@@ -47,4 +49,7 @@ public interface ZooStoreRestClient {
 
     @RequestLine("DELETE /zoostore/tag/{id}")
     DeleteTagResponse deleteTag(@Param Long id);
+
+    @RequestLine("GET /zoostore/item/all")
+    GetAllItemsResponse getAllItemsByTag(GetAllItemsRequest request);
 }
