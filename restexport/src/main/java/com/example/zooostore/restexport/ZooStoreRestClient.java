@@ -50,6 +50,6 @@ public interface ZooStoreRestClient {
     @RequestLine("DELETE /zoostore/tag/{id}")
     DeleteTagResponse deleteTag(@Param Long id);
 
-    @RequestLine("GET /zoostore/item/all")
-    GetAllItemsResponse getAllItemsByTag(GetAllItemsRequest request);
+    @RequestLine("GET /zoostore/item/all/{input}/{page}")
+    GetAllItemsResponse getAllItemsByTag(@Param(value = "input") String input, @Param(value = "page") Integer page);
 }

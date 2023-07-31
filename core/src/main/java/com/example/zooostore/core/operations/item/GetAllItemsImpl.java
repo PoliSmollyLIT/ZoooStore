@@ -12,7 +12,11 @@ import com.example.zooostore.persistance.repositories.ItemRepository;
 import com.example.zooostore.persistance.repositories.TagRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.metrics.StartupStep;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -27,31 +31,25 @@ import java.util.stream.Collectors;
 public class GetAllItemsImpl implements GetAllItemsOperation {
     private final ItemRepository itemRepository;
     private final TagRepository tagRepository;
+    @Value("${pagination}")
+    private Integer pagination;
 
     @Override
     public GetAllItemsResponse process(GetAllItemsRequest request) {
         Tag tagToFilterBy = tagRepository.findByTitle(request.getTagTitle())
                 .orElseThrow(EntityNotFoundException::new);
+        Pageable pageable = PageRequest.of(request.getPage(), pagination);
 
-        List<GetSingleItemResponse> result = itemRepository.findAll().stream()
-                .filter(item -> item.getTags().contains(tagToFilterBy))
+        Page<Item> items = itemRepository.findAllByTags_Id(tagToFilterBy.getId(), pageable);
+
+        List<GetSingleItemResponse> itemsFromPage = items.getContent().stream()
                 .map(item -> GetSingleItemResponse.builder()
                         .id(item.getId())
                         .title(item.getTitle())
                         .description(item.getDescription())
-                        .vendorId(item.getVendor().getId())
-                        .multimediaIds(item.getMultimedia()
-                                .stream()
-                                .map(Multimedia::getId)
-                                .collect(Collectors.toSet()))
-                        .tagIds(item.getTags()
-                                .stream()
-                                .map(Tag::getId)
-                                .collect(Collectors.toSet()))
                         .archive(item.isArchived())
-                        .build())
-                .collect(Collectors.toList());
-
-        return GetAllItemsResponse.builder().items(result).build();
+                        .vendorId(item.getVendor().getId())
+                .build()).toList();
+        return GetAllItemsResponse.builder().items(itemsFromPage).build();
     }
     }

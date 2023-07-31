@@ -61,12 +61,15 @@ public class ItemController {
         return ResponseEntity.ok(getItem.process(getItemRequest));
     }
 
-    @GetMapping("/all")
-    public ResponseEntity getItemsByTag(@RequestParam String input){
+    @GetMapping("/all/{input}/{page}")//?page={page}
+    public ResponseEntity<GetAllItemsResponse> getItemsByTag(@PathVariable String input, @PathVariable Integer page){
         GetAllItemsRequest request = GetAllItemsRequest.builder()
                 .tagTitle(input)
+                .page(page)
                 .build();
         return ResponseEntity.ok(getAllItems.process(request));
     }
 
 }
+//localhost:8080/all/cat-food/1
+//localhost:8080/all/cat-food?page=1

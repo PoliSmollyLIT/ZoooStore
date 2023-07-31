@@ -10,4 +10,5 @@ import lombok.*;
 @NoArgsConstructor
 public class GetAllItemsRequest implements OperationInput {
     private String tagTitle;
+    private Integer page;
 }
