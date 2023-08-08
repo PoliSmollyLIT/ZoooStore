@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class EditTagImpl implements EditTagOperation {
+public class EditTagCore implements EditTagOperation {
     private final TagRepository tagRepository;
     @Override
     public EditTagResponse process(EditTagRequest tag) {

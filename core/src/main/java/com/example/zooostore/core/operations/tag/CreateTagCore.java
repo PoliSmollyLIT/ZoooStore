@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class CreateTagImpl implements CreateTagOperation {
+public class CreateTagCore implements CreateTagOperation {
     private final TagRepository tagRepository;
     @Override
     public CreateTagResponse process(CreateTagRequest tag) {

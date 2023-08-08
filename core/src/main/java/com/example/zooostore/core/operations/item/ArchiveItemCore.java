@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class ArchiveItemImpl implements ArchiveItemOperation {
+public class ArchiveItemCore implements ArchiveItemOperation {
     private final ItemRepository itemRepository;
     @Override
     public ArchiveItemResponse process(ArchiveItemRequest archiveItemRequest) {

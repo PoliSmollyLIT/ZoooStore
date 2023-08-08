@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class CreateVendorImpl implements CreateVendorOperation {
+public class CreateVendorCore implements CreateVendorOperation {
     private final VendorRepository vendorRepository;
     @Override
     public CreateVendorResponse process(CreateVendorRequest vendor) {

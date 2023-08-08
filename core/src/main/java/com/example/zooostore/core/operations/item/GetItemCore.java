@@ -18,7 +18,7 @@ import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
-public class GetItemImpl implements GetItemOperation {
+public class GetItemCore implements GetItemOperation {
     private final ItemRepository itemRepository;
     @Override
     public GetItemResponse process(GetItemRequest getItemRequest) {

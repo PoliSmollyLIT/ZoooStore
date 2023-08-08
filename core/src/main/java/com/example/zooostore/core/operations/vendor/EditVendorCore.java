@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class EditVendorImpl implements EditVendorOperation {
+public class EditVendorCore implements EditVendorOperation {
     private final VendorRepository vendorRepository;
     @Override
     public EditVendorResponse process(EditVendorRequest vendor) {

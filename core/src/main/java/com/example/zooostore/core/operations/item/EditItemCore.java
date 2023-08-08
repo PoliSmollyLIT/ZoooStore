@@ -16,7 +16,7 @@ import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
-public class EditItemImpl implements EditItemOperation {
+public class EditItemCore implements EditItemOperation {
     private final ItemRepository itemRepository;
     private final VendorRepository vendorRepository;
     @Override

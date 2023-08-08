@@ -1,7 +1,7 @@
 package com.example.zooostore.rest.controllers;
 
 import com.example.zooostore.api.operations.multimedia.create.CreateMultimediaRequest;
-import com.example.zooostore.core.operations.multimedia.CreateMultimediaImpl;
+import com.example.zooostore.core.operations.multimedia.CreateMultimediaCore;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Tag(name = "Zoostore", description = "API for working with multimedia")
 public class MultimediaController {
-    private final CreateMultimediaImpl createMultimedia;
+    private final CreateMultimediaCore createMultimedia;
 
     @PostMapping()
     @Operation(summary = "Craete Multimedia", description = "Creates a new Multimedia")

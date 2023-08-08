@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class CreateMultimediaImpl implements CreateMultimediaOperation {
+public class CreateMultimediaCore implements CreateMultimediaOperation {
     private final MultimediaRepository multimediaRepository;
     private final ItemRepository itemRepository;
     @Override

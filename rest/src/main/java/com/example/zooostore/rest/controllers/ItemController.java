@@ -1,16 +1,23 @@
 package com.example.zooostore.rest.controllers;
 
+import com.example.zooostore.api.operations.item.archive.ArchiveItemOperation;
 import com.example.zooostore.api.operations.item.archive.ArchiveItemRequest;
+import com.example.zooostore.api.operations.item.create.CreateItemOperation;
 import com.example.zooostore.api.operations.item.create.CreateItemRequest;
+import com.example.zooostore.api.operations.item.edit.EditItemOperation;
 import com.example.zooostore.api.operations.item.edit.EditItemRequest;
+import com.example.zooostore.api.operations.item.get.GetItemOperation;
 import com.example.zooostore.api.operations.item.get.GetItemRequest;
+import com.example.zooostore.api.operations.item.getall.GetAllItemsOperation;
 import com.example.zooostore.api.operations.item.getall.GetAllItemsRequest;
 import com.example.zooostore.api.operations.item.getall.GetAllItemsResponse;
+import com.example.zooostore.api.operations.item.searchbytitle.SearchByTitleOperation;
+import com.example.zooostore.api.operations.item.searchbytitle.SearchByTitleRequest;
+import com.example.zooostore.api.operations.item.searchbytitle.SearchByTitleResponse;
 import com.example.zooostore.core.operations.item.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.Min;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -24,11 +31,12 @@ import java.util.UUID;
 @RequiredArgsConstructor
 @Validated
 public class ItemController {
-    private final ArchiveItemImpl archiveItem;
-    private final CreateItemImpl createItem;
-    private final EditItemImpl editItem;
-    private final GetItemImpl getItem;
-    private final GetAllItemsImpl getAllItems;
+    private final ArchiveItemOperation archiveItem;
+    private final CreateItemOperation createItem;
+    private final EditItemOperation editItem;
+    private final GetItemOperation getItem;
+    private final GetAllItemsOperation getAllItems;
+    private final SearchByTitleOperation searchByTitle;
 
     @PostMapping()
     @Operation(summary = "Create Item", description = "Creates a new Item")
@@ -68,6 +76,15 @@ public class ItemController {
                 .page(page)
                 .build();
         return ResponseEntity.ok(getAllItems.process(request));
+    }
+
+    @GetMapping("/title/{title}/{page}")
+    public ResponseEntity<SearchByTitleResponse> searchByTitle(@PathVariable String title, @PathVariable Integer page){
+        SearchByTitleRequest request = SearchByTitleRequest.builder()
+                .titleRegex(title)
+                .page(page)
+                .build();
+        return ResponseEntity.ok(searchByTitle.process(request));
     }
 
 }

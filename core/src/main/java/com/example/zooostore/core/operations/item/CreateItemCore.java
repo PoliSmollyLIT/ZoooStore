@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class CreateItemImpl implements CreateItemOperation {
+public class CreateItemCore implements CreateItemOperation {
     private final ItemRepository itemRepository;
     private final VendorRepository vendorRepository;
     private final TagRepository tagRepository;

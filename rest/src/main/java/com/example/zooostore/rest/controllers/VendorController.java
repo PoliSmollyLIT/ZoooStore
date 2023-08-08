@@ -2,8 +2,8 @@ package com.example.zooostore.rest.controllers;
 
 import com.example.zooostore.api.operations.vendor.create.CreateVendorRequest;
 import com.example.zooostore.api.operations.vendor.edit.EditVendorRequest;
-import com.example.zooostore.core.operations.vendor.CreateVendorImpl;
-import com.example.zooostore.core.operations.vendor.EditVendorImpl;
+import com.example.zooostore.core.operations.vendor.CreateVendorCore;
+import com.example.zooostore.core.operations.vendor.EditVendorCore;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.*;
 @Tag(name = "Zoostsore", description = "API for working with vendors")
 @RequiredArgsConstructor
 public class VendorController {
-    private final CreateVendorImpl createVendor;
-    private final EditVendorImpl editVendor;
+    private final CreateVendorCore createVendor;
+    private final EditVendorCore editVendor;
 
     @PostMapping()
     @Operation(summary = "Create Vendor", description = "Creates a new Vendor")
