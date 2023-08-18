@@ -1,0 +1,12 @@
+com\example\zooostore\persistance\models\Multimedia.class
+com\example\zooostore\persistance\repositories\MultimediaRepository.class
+com\example\zooostore\persistance\repositories\ItemRepository.class
+com\example\zooostore\persistance\models\Item$ItemBuilder.class
+com\example\zooostore\persistance\models\Vendor.class
+com\example\zooostore\persistance\repositories\TagRepository.class
+com\example\zooostore\persistance\models\Tag$TagBuilder.class
+com\example\zooostore\persistance\models\Vendor$VendorBuilder.class
+com\example\zooostore\persistance\models\Tag.class
+com\example\zooostore\persistance\models\Item.class
+com\example\zooostore\persistance\repositories\VendorRepository.class
+com\example\zooostore\persistance\models\Multimedia$MultimediaBuilder.class
