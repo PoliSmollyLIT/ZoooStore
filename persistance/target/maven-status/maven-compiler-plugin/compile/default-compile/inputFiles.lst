@@ -1,8 +1,8 @@
-C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\persistance\src\main\java\com\example\zooostore\persistance\models\Vendor.java
-C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\persistance\src\main\java\com\example\zooostore\persistance\repositories\VendorRepository.java
-C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\persistance\src\main\java\com\example\zooostore\persistance\models\Tag.java
-C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\persistance\src\main\java\com\example\zooostore\persistance\repositories\TagRepository.java
-C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\persistance\src\main\java\com\example\zooostore\persistance\repositories\MultimediaRepository.java
-C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\persistance\src\main\java\com\example\zooostore\persistance\repositories\ItemRepository.java
-C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\persistance\src\main\java\com\example\zooostore\persistance\models\Item.java
-C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\persistance\src\main\java\com\example\zooostore\persistance\models\Multimedia.java
+C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\persistance\src\main\java\com\tinquinstore\zooostore\persistance\models\Multimedia.java
+C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\persistance\src\main\java\com\tinquinstore\zooostore\persistance\repositories\MultimediaRepository.java
+C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\persistance\src\main\java\com\tinquinstore\zooostore\persistance\models\Tag.java
+C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\persistance\src\main\java\com\tinquinstore\zooostore\persistance\models\Vendor.java
+C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\persistance\src\main\java\com\tinquinstore\zooostore\persistance\models\Item.java
+C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\persistance\src\main\java\com\tinquinstore\zooostore\persistance\repositories\VendorRepository.java
+C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\persistance\src\main\java\com\tinquinstore\zooostore\persistance\repositories\TagRepository.java
+C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\persistance\src\main\java\com\tinquinstore\zooostore\persistance\repositories\ItemRepository.java

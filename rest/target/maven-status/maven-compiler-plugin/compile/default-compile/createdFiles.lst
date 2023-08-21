@@ -1,6 +1,6 @@
-com\example\zooostore\rest\controllers\TagController.class
-com\example\zooostore\rest\controllers\ItemController.class
-com\example\zooostore\rest\controllers\VendorController.class
-com\example\zooostore\rest\ZoooStoreApplication.class
-com\example\zooostore\rest\controllers\MultimediaController.class
-com\example\zooostore\rest\advices\GlobalExceptionHandler.class
+com\tinquinstore\zooostore\rest\ZoooStoreApplication.class
+com\tinquinstore\zooostore\rest\controllers\ItemController.class
+com\tinquinstore\zooostore\rest\controllers\MultimediaController.class
+com\tinquinstore\zooostore\rest\controllers\TagController.class
+com\tinquinstore\zooostore\rest\controllers\VendorController.class
+com\tinquinstore\zooostore\rest\advices\GlobalExceptionHandler.class

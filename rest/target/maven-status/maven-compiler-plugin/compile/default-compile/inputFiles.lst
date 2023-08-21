@@ -1,6 +1,6 @@
-C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\rest\src\main\java\com\example\zooostore\rest\controllers\TagController.java
-C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\rest\src\main\java\com\example\zooostore\rest\controllers\MultimediaController.java
-C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\rest\src\main\java\com\example\zooostore\rest\controllers\VendorController.java
-C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\rest\src\main\java\com\example\zooostore\rest\controllers\ItemController.java
-C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\rest\src\main\java\com\example\zooostore\rest\ZoooStoreApplication.java
-C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\rest\src\main\java\com\example\zooostore\rest\advices\GlobalExceptionHandler.java
+C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\rest\src\main\java\com\tinquinstore\zooostore\rest\controllers\TagController.java
+C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\rest\src\main\java\com\tinquinstore\zooostore\rest\advices\GlobalExceptionHandler.java
+C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\rest\src\main\java\com\tinquinstore\zooostore\rest\ZoooStoreApplication.java
+C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\rest\src\main\java\com\tinquinstore\zooostore\rest\controllers\MultimediaController.java
+C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\rest\src\main\java\com\tinquinstore\zooostore\rest\controllers\VendorController.java
+C:\Users\Polina\Documents\Work\Tinqin\ZoooStore\rest\src\main\java\com\tinquinstore\zooostore\rest\controllers\ItemController.java
