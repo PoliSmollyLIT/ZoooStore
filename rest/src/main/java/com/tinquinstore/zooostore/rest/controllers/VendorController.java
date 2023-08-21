@@ -1,4 +1,4 @@
-package com.example.zooostore.rest.controllers;
+package com.tinquinstore.zooostore.rest.controllers;
 
 import com.example.zooostore.api.operations.vendor.create.CreateVendorRequest;
 import com.example.zooostore.api.operations.vendor.edit.EditVendorRequest;

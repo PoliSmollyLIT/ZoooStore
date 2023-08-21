@@ -1,4 +1,4 @@
-package com.example.zooostore.rest.advices;
+package com.tinquinstore.zooostore.rest.advices;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;

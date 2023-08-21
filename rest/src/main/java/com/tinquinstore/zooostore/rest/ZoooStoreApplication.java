@@ -1,4 +1,4 @@
-package com.example.zooostore.rest;
+package com.tinquinstore.zooostore.rest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

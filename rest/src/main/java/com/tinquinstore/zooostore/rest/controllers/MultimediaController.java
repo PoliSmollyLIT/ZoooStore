@@ -1,4 +1,4 @@
-package com.example.zooostore.rest.controllers;
+package com.tinquinstore.zooostore.rest.controllers;
 
 import com.example.zooostore.api.operations.multimedia.create.CreateMultimediaRequest;
 import com.example.zooostore.core.operations.multimedia.CreateMultimediaCore;

@@ -1,4 +1,4 @@
-package com.example.zooostore.rest.controllers;
+package com.tinquinstore.zooostore.rest.controllers;
 
 import com.example.zooostore.api.operations.item.archive.ArchiveItemOperation;
 import com.example.zooostore.api.operations.item.archive.ArchiveItemRequest;
