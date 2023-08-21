@@ -1,9 +1,9 @@
 package com.tinquinstore.zooostore.rest.controllers;
 
-import com.example.zooostore.api.operations.vendor.create.CreateVendorRequest;
-import com.example.zooostore.api.operations.vendor.edit.EditVendorRequest;
-import com.example.zooostore.core.operations.vendor.CreateVendorCore;
-import com.example.zooostore.core.operations.vendor.EditVendorCore;
+import com.tinquinstore.zooostore.api.operations.vendor.create.CreateVendorRequest;
+import com.tinquinstore.zooostore.api.operations.vendor.edit.EditVendorRequest;
+import com.tinquinstore.zooostore.core.operations.vendor.CreateVendorCore;
+import com.tinquinstore.zooostore.core.operations.vendor.EditVendorCore;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;

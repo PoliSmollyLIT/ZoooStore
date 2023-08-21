@@ -1,11 +1,11 @@
 package com.tinquinstore.zooostore.rest.controllers;
 
-import com.example.zooostore.api.operations.tag.create.CreateTagRequest;
-import com.example.zooostore.api.operations.tag.delete.DeleteTagRequest;
-import com.example.zooostore.api.operations.tag.edit.EditTagRequest;
-import com.example.zooostore.core.operations.tag.CreateTagCore;
-import com.example.zooostore.core.operations.tag.DeleteTagCore;
-import com.example.zooostore.core.operations.tag.EditTagCore;
+import com.tinquinstore.zooostore.api.operations.tag.create.CreateTagRequest;
+import com.tinquinstore.zooostore.api.operations.tag.delete.DeleteTagRequest;
+import com.tinquinstore.zooostore.api.operations.tag.edit.EditTagRequest;
+import com.tinquinstore.zooostore.core.operations.tag.CreateTagCore;
+import com.tinquinstore.zooostore.core.operations.tag.DeleteTagCore;
+import com.tinquinstore.zooostore.core.operations.tag.EditTagCore;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;

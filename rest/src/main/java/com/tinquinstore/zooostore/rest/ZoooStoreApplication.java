@@ -8,10 +8,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableFeignClients(basePackages = {"com.example.zooostore"})
-@ComponentScan(basePackages = {"com.example.zooostore"})
-@EntityScan(basePackages = {"com.example.zooostore.persistance.models"})
-@EnableJpaRepositories(basePackages = {"com.example.zooostore.persistance.repositories"})
+@EnableFeignClients(basePackages = {"com.tinquinstore.zooostore"})
+@ComponentScan(basePackages = {"com.tinquinstore.zooostore"})
+@EntityScan(basePackages = {"com.tinquinstore.zooostore.persistance.models"})
+@EnableJpaRepositories(basePackages = {"com.tinquinstore.zooostore.persistance.repositories"})
 public class ZoooStoreApplication {
 
     public static void main(String[] args) {

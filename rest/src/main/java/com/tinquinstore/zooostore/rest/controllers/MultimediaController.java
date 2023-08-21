@@ -1,7 +1,7 @@
 package com.tinquinstore.zooostore.rest.controllers;
 
-import com.example.zooostore.api.operations.multimedia.create.CreateMultimediaRequest;
-import com.example.zooostore.core.operations.multimedia.CreateMultimediaCore;
+import com.tinquinstore.zooostore.api.operations.multimedia.create.CreateMultimediaRequest;
+import com.tinquinstore.zooostore.core.operations.multimedia.CreateMultimediaCore;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
